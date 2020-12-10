@@ -1,0 +1,118 @@
+html {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #363537;
+  margin: 0;
+  padding: 0;
+}
+
+.parallax {
+  /* The image used */
+  background-image: url("images/splash.png");
+
+  /* Set a specific height */
+  height: 500px;
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.topBar {
+  width: 100%;
+  background-color: #555;
+  overflow: auto;
+}
+
+/* Navigation links */
+.topBar a {
+  float: left;
+  padding: 10px 0px;
+  color: #EEF8FE;
+  text-decoration: none;
+  font-size: 24px;
+  width: 20%;
+  text-align: center;
+  transition: background-color 0.3s;
+}
+
+/* Add a background color on mouse-over */
+.topBar a:hover {
+  background-color: #AB0934;
+}
+
+/* Style the current/active link */
+.topBar a.active-page {
+  background-color: #EF2D56;
+}
+
+.paragraph {
+  color: #EEF8FE;
+  font-size: xx-large;
+  text-indent: 50px;
+  width: 75%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.log {
+  color: #EEF8FE;
+  padding:  20px;
+  border-radius: 25px;
+  background-color: #272728;
+  font-size: xx-large;
+  width: 75%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 30px;
+}
+
+.shop {
+  margin-top: 50px;
+  position: relative;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  justify-content: space-evenly;
+  grid-gap: 50px;
+}
+
+.item {
+  display: inline-grid;
+  text-decoration:none;
+  text-align: center;
+  color: #EEF8FE;
+  padding:  20px;
+  border-radius: 25px;
+  background-color: #272728;
+  font-size: x-large;
+  border: none;
+  transition: background-color 0.3s;
+  transition: transform 0.1s;
+}
+
+.item img{
+  width: 90%;
+  border-radius:  10%;
+  margin: auto;
+  margin-bottom: 20px;
+}
+
+.item:hover {
+  background-color: #171718;
+}
+
+.box {
+  width: 100%
+  height: 100px;
+  display: flex;
+  justify-content: center;
+}
+
+.box img{
+  width:300px;
+}

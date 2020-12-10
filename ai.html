@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Fluke</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/addons/p5.sound.min.js"></script>
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <header>
+    <div class = "topBar">
+      <a href="index.html">Wumpus</a>
+      <a href="ai.html" class = 'active-page'>AI</a>
+      <a href="log.html">Log</a>
+      <a href="about-us.html">About Us</a>
+      <a href="shop.html"> <i class='fas fa-shopping-cart'></i> </a>
+    </div>
+  </header>
+  <body>
+    <div>
+      <div class="box">
+        <img src="images/archer_big.png" style="width: 400px">
+      </div>
+      <p class = "paragraph">
+        Our AI is Fluke. Fluke has two general states, Discovery and Return mode and a grid that serves as its memory.
+        Discovery mode is used when Fluke does not know where the gold and Return mode will return to the start once the gold has been found.
+      </p>
+      <p class = "paragraph">
+        Discovery mode will do two main things, move to an adjacent undiscovered safe tile, or will path find to the closest safe undiscovered tile.
+        Inside of Discovery mode, if Fluke ever knows where the Wumpus is, it will kill the Wumpus.
+      </p>
+      <p class = "paragraph">
+        Return mode operates very similarly to Discovery mode when it searches for the nearest safe undiscovered tile,
+        however instead of seaching for the nearest tile it will look for the shortest path back to the start.
+        Return mode will play it safe and not make any new discoveries using only safe tiles.
+      </p>
+      <div class="box">
+        <img src="images/fluke-1.png" style="width: 400px">
+      </div>
+      <p class = "paragraph">
+        Using this puzzle as an example. Fluke will start in Discovery mode and seek out the neighboring safe tiles.
+      </p>
+      <div class="box">
+        <img src="images/fluke-2.png" style="width: 400px">
+      </div>
+      <p class = "paragraph">
+        Here Fluke has detected a stench, because it does not know which tile is the Wumpus and there are no more adjacent safe tiles it will backtrack.
+      </p>
+      <div class="box">
+        <img src="images/fluke-3.png" style="width: 400px">
+      </div>
+      <p class = "paragraph">
+        Fluke has detected both a stench and a breeze, but using preveous knowledge it knows that the tile above must be the Wumpus.
+        It will kill the Wumpus and move up.
+      </p>
+      <div class="box">
+        <img src="images/fluke-4.png" style="width: 400px">
+      </div>
+      <p class = "paragraph">
+        Fluke currently senses nothing and will continue to explore.
+      </p>
+      <div class="box">
+        <img src="images/fluke-5.png" style="width: 400px">
+      </div>
+      <p class = "paragraph">
+        After exploring Fluke has finally detected glitter. Knowing that the tile to the left is a pit and all other adjacent tiles having been explored,
+        Fluke now knows the location of the gold.
+      </p>
+      <div class="box">
+        <img src="images/fluke-6.png" style="width: 400px">
+      </div>
+      <p class = "paragraph">
+        Fluke has now entered Return mode and will pathfind back. It is able to use a shortcut knowing that there are no pits on the bottom row.
+      </p>
+      <div class="box">
+        <img src="images/fluke-7.png" style="width: 400px">
+      </div>
+      <p class = "paragraph">
+        Fluke has now returned to the start using the bottom row and has completed the puzzle.
+      </p>
+      <p class = "paragraph" style="font-size:7vw; text-indent:0;">
+        Robo Round Up
+      </p>
+      <p class = "log">
+        Round 1<br><br>
+        9 of 11 robots passed the first round. Fluke was able to succeed with no issue.
+      </p>
+      <p class = "log">
+        Round 2<br><br>
+        7 of 11 robots passed the first round. Fluke had no issues.
+      </p>
+      <p class = "log">
+        Round 3<br><br>
+        4 of 11 robots passed the first round. Fluke had no issues.
+      </p>
+      <p class = "log">
+        Round 4<br><br>
+        3 of 11 robots passed the first round. Fluke had no issues.
+      </p>
+      <p class = "log">
+        Round 5<br><br>
+        3 of 11 robots passed the first round. Fluke had no issues.
+      </p>
+      <p class = "log">
+        Ryan's Bonus Round<br><br>
+        3 of 11 robots passed the first round. Fluke's first problem occured, the back tracking algorithm was slow causing the AI pause for a second.
+        The issue was caused by trying to track backwards in an open area with only a few obstacles.
+      </p>
+      <p class = "paragraph">
+        Overall Fluke preformed well and was one of the three finalists. The main future improvement would be optimizing the slow backtracking algorithm.
+      </p>
+      <p class = "paragraph">
+        Other improvements would include; adding the ability to make statistical guesses when presented with an impossible board,
+        and switching up how priotitized pathfinding works to be random in direction as it would take fewer steps on average.
+      </p>
+    </div>
+  </body>
+</html>
