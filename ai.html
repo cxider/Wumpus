@@ -22,17 +22,16 @@
         <img src="images/archer_big.png" style="width: 400px">
       </div>
       <p class = "paragraph">
-        Our AI is Fluke. Fluke has two general states, Discovery and Return mode and a grid that serves as its memory.
-        Discovery mode is used when Fluke does not know where the gold and Return mode will return to the start once the gold has been found.
+        Our AI is Fluke. Fluke has two general states: Discovery and Return. Fluke stores a grid that serves as its memory.
+        Discovery mode is used when Fluke does not know where the gold is and Return mode will return to the start once the gold has been collected.
       </p>
       <p class = "paragraph">
-        Discovery mode will do two main things, move to an adjacent undiscovered safe tile, or will path find to the closest safe undiscovered tile.
+        Discovery mode searches for, and path-finds to, the nearest safe, undiscovered tile, updating the stored board as new tiles are uncovered.
         Inside of Discovery mode, if Fluke ever knows where the Wumpus is, it will kill the Wumpus.
       </p>
       <p class = "paragraph">
-        Return mode operates very similarly to Discovery mode when it searches for the nearest safe undiscovered tile,
-        however instead of seaching for the nearest tile it will look for the shortest path back to the start.
-        Return mode will play it safe and not make any new discoveries using only safe tiles.
+        Return mode operates very similarly to Discovery mode. However, instead of path-finding to the nearest safe, undiscovered tile,
+        Return mode searches for the shortest path back to the start, following a path of only tiles it has visited before.
       </p>
       <div class="box">
         <img src="images/Fluke-1.png" style="width: 400px">
@@ -44,13 +43,13 @@
         <img src="images/Fluke-2.png" style="width: 400px">
       </div>
       <p class = "paragraph">
-        Here Fluke has detected a stench, because it does not know which tile is the Wumpus and there are no more adjacent safe tiles it will backtrack.
+        Here, Fluke detects a stench. Since it does not know which tile the Wumpus is on, it must backtrack.
       </p>
       <div class="box">
         <img src="images/Fluke-3.png" style="width: 400px">
       </div>
       <p class = "paragraph">
-        Fluke has detected both a stench and a breeze, but using preveous knowledge it knows that the tile above must be the Wumpus.
+        Fluke has detected both a stench and a breeze, but using previous knowledge it knows that the tile above must be the Wumpus.
         It will kill the Wumpus and move up.
       </p>
       <div class="box">
@@ -70,13 +69,13 @@
         <img src="images/Fluke-6.png" style="width: 400px">
       </div>
       <p class = "paragraph">
-        Fluke has now entered Return mode and will pathfind back. It is able to use a shortcut knowing that there are no pits on the bottom row.
+        Fluke has now entered Return mode and will path-find back to the start.
       </p>
       <div class="box">
         <img src="images/Fluke-7.png" style="width: 400px">
       </div>
       <p class = "paragraph">
-        Fluke has now returned to the start using the bottom row and has completed the puzzle.
+        Fluke has now completed the puzzle.
       </p>
       <p class = "paragraph" style="font-size:7vw; text-indent:0;">
         Robo Round Up
@@ -99,12 +98,12 @@
       </p>
       <p class = "log">
         Round 5<br><br>
-        3 of 11 robots passed the first round. Fluke had no issues.
+        3 of 11 robots passed the first round. Fluke's first problem occured, the back tracking algorithm was slow causing the AI pause for a second.
+        The issue was caused by trying to track backwards in an open area with only a few obstacles.
       </p>
       <p class = "log">
         Ryan's Bonus Round<br><br>
-        3 of 11 robots passed the first round. Fluke's first problem occured, the back tracking algorithm was slow causing the AI pause for a second.
-        The issue was caused by trying to track backwards in an open area with only a few obstacles.
+        3 of 11 robots passed the first round. Fluke once again had no issues.
       </p>
       <p class = "paragraph">
         Overall Fluke preformed well and was one of the three finalists. The main future improvement would be optimizing the slow backtracking algorithm.
