@@ -26,7 +26,10 @@ body {
 .topBar {
   width: 100%;
   background-color: #555;
-  overflow: auto;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: auto auto auto auto auto auto;
+  justify-content: space-evenly;
 }
 
 /* Navigation links */
@@ -36,7 +39,8 @@ body {
   color: #EEF8FE;
   text-decoration: none;
   font-size: 24px;
-  width: 20%;
+  margin: auto;
+  width: 17vw;
   text-align: center;
   transition: background-color 0.3s;
 }
